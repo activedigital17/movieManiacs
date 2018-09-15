@@ -1,0 +1,76 @@
+<% include partials/header %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<main class="main-content">
+				<div class="container">
+					<div class="page">
+						<div class="breadcrumbs">
+							<a href="/">Home</a>
+							<span>Movie Review</span>
+						</div>
+
+						
+					
+						<div class="movie-list">
+							
+						
+						
+							
+							<% parsedData["Search"].forEach(function(movie){%>
+							
+						
+								
+								<div class="movie">
+								<figure class="movie-poster"><img src="<%= movie["Poster"]%>" alt="Not Found!" onerror=this.src="dummy/noImage.jpg"></figure>
+								<div class="movie-title"><a id="title" href="/single" >
+									
+									
+									<form action = "/single" method = "get" >
+									<input type="hidden" name = "singleMovie" value = "<%=movie["Title"]%>" >   
+									
+									
+									<button class="buttonSubmit">
+										
+										
+									<%=movie["Title"]%> </input>
+									
+									
+							
+									</button>
+									
+									
+									</form>
+									
+						
+								
+									
+							
+								
+									
+									
+								</a></div>
+								
+							</div>
+								
+								
+							<% });%>
+							
+							
+							
+							
+							
+						</div> <!-- .movie-list -->
+
+						
+					</div>
+				</div> <!-- .container -->
+			</main>
+		
+	
+				
+	
+	
+		
+<% include partials/footer %>
+

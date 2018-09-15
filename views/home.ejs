@@ -1,0 +1,45 @@
+<% include partials/header %>
+
+
+<main class="main-content">
+				<div class="container">
+					<div class="page">
+					
+					<div>
+					<h1 class="homePage">LATEST NEWS</h1>	
+					
+					</div>
+					
+					
+				
+
+					
+					
+						<% xml.forEach(function(news){ %>
+						
+					<div class="movieNews homePage">	
+						
+					<h3><%= news["title"];%></h3>	
+					
+					<p><%= news["content"];%></p>
+					<button type="button" class="btn btn-default"><a href="<%= news["link"];%>">Learn More!</a></button>
+						</div>
+						<% }); %>
+					
+					
+						
+                        
+
+
+
+
+
+
+
+					</div>
+				</div> <!-- .container -->
+			</main>
+			
+			
+			
+<% include partials/footer %>

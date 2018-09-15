@@ -1,0 +1,59 @@
+<% include partials/header %>
+
+<main class="main-content">
+				<div class="container">
+					
+				
+				
+					
+				
+					<div class="page">
+						<div class="breadcrumbs">
+							<a href="/">Home</a>
+						
+						
+						
+							<span><%= data["Title"] %></span>
+						</div>
+
+						<div class="content">
+							<div class="row">
+								<div class="col-md-6">
+									<figure class="movie-poster"><img src="<%= data["Poster"]%>" alt="Not Found!" onerror=this.src="dummy/noImage.jpg"></figure>
+								</div>
+								<div class="col-md-6">
+									<h2 class="movie-title"><%= data["Title"]%> </h2>
+									<div class="movie-summary">
+									<p>	<%= data ["Plot"] %> </p>
+										
+									</div>
+									<ul class="movie-meta">
+										<li><strong>IMDB Rating:</strong> 
+											<%=data["imdbRating"]%>
+										</li>
+										<li><strong>Metascore Rating:</strong> 
+											<%=data["Metascore"]%>
+										</li>
+										<li><strong>Length:</strong> <%=data["Runtime"]%></li>
+										<li><strong>Released:</strong> <%=data["Released"]%></li>
+										<li><strong>Genre:</strong> <%=data["Genre"]%></li>
+										<li><strong>Awards:</strong> <%=data["Awards"]%></li>
+										<li><strong>Website:</strong> <a href="<%=data["Website"]%>"> <%=data["Website"]%> </a> </li>
+									</ul>
+
+									<ul class="starring">
+										<li><strong>Director:</strong> <%=data["Director"]%></li>
+										<li><strong>Writer:</strong> <%=data["Writer"]%></li>
+										<li><strong>Actors:</strong> <%=data["Actors"]%></li>
+									</ul>
+								</div>
+							</div> <!-- .row -->
+						
+						</div>
+					</div>
+				</div> <!-- .container -->
+			
+				
+			</main>
+
+<% include partials/footer %>

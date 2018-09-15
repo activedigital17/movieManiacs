@@ -1,0 +1,119 @@
+<% include partials/header %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<main class="main-content">
+				<div class="container">
+					<div class="page">
+						<div class="breadcrumbs">
+							<a href="/">Home</a>
+							<span>Download Section</span>
+						</div>
+                        
+                        <div class = "downloadBar">
+                        <form action="/download" method="GET">
+							<input type="text" placeholder="Search Torrent..." name="download">
+							<button type="submit"><i class="fa fa-search"></i></button>
+							
+							</form>
+                        </div>
+						
+					
+						<div class="movie-list">
+							
+						
+						
+							
+							<% downloadBody["data"]["movies"].forEach(function(movie){%>
+							
+						
+								
+								<div class="movie">
+								<figure class="movie-poster"><img src="<%= movie["medium_cover_image"]%>" alt="#"></figure>
+								<div class="movie-title">
+                                
+                                
+									
+									
+									
+								   
+									
+									
+								
+										
+									
+
+									<p><%=movie["title"]%></p>
+
+                                    <a class = "smallerFont" href="https://www.youtube.com/watch?v=<%=movie["yt_trailer_code"]%>">TRAILER</a>
+                                    
+                                    <% movie["torrents"].forEach(function(url){ %>
+
+
+                                       <% if (url["quality"]=="720p"){ %>
+
+                                       <div class="smallerFont">
+
+                                       <p><a href="<%= url["url"]%> "> DOWNLOAD</a></p> 
+                                      
+
+                                      </div>
+
+                                    
+                                        
+                                       
+                                      <% }; %>
+
+                                      
+                                        
+                                       
+
+
+                                   <% }); %> 
+                                    
+                                    
+
+
+                                  
+									
+									
+							
+								
+									
+									
+								
+									
+						</div>
+
+                        </div>
+								
+									
+							
+								
+									
+									
+								
+								
+							
+								
+								
+							<% });%>
+							
+							
+							
+							
+							
+						</div> <!-- .movie-list -->
+
+						
+					</div>
+				</div> <!-- .container -->
+			</main>
+		
+	
+				
+	
+	
+		
+<% include partials/footer %>
+
